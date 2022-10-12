@@ -21,6 +21,7 @@ public class WalletViewModel extends ViewModel {
   private int doubleSixes;
   private int totalRolls;
   private int doubleOthers;
+  public boolean inc;
 
   /**
    * The no argument constructor.
@@ -33,6 +34,7 @@ public class WalletViewModel extends ViewModel {
     doubleOthers = 0;
     doubleSixes = 0;
     totalRolls = 0;
+    inc = false;
     mDie = new Die6();
   }
 
@@ -60,18 +62,22 @@ public class WalletViewModel extends ViewModel {
     //double sixes
     if(mDie.value() == WIN_VALUE && lastRoll == WIN_VALUE) {
       doubleSixes ++;
+      inc = true;
       mBalance += INCREMENT + BONUS;
     }
     //single six
     else if(mDie.value() == WIN_VALUE){
       singleSixes ++;
+      inc = true;
       mBalance += INCREMENT;
     }
     //double other
     else if(mDie.value() ==  lastRoll){
       doubleOthers ++;
+      inc = false;
       mBalance -= PENALTY;
     }
+    else inc = false;
     Log.d(TAG, "New Balance = " + mBalance);
   }
 

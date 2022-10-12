@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +48,9 @@ public class WalletActivity extends AppCompatActivity {
       @Override
       public void onClick(View view) {
         mWalletVM.rollDie();
+        if(mWalletVM.inc){
+          Toast.makeText(WalletActivity.this, "Congratulations!", Toast.LENGTH_SHORT).show();
+        }
         updateUI();
       }
     });
