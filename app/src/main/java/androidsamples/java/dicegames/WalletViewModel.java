@@ -1,14 +1,39 @@
 package androidsamples.java.dicegames;
 
+import android.util.Log;
+import android.widget.inline.InlineContentView;
+
 import androidx.lifecycle.ViewModel;
 
 public class WalletViewModel extends ViewModel {
+
+  private static final String TAG = "WalletViewModel";
+
+  private static final int WIN_VALUE = 6;
+  private static final int INCREMENT = 5;
+  private static final int BONUS = 5;
+  private static final int PENALTY = 5;
+
+  private int mBalance;
+  private Die mDie;
+  private int lastRoll;
+  private int singleSixes;
+  private int doubleSixes;
+  private int totalRolls;
+  private int doubleOthers;
 
   /**
    * The no argument constructor.
    */
   public WalletViewModel() {
     // TODO implement method
+    mBalance = 0;
+    lastRoll = 0;
+    singleSixes = 0;
+    doubleOthers = 0;
+    doubleSixes = 0;
+    totalRolls = 0;
+    mDie = new Die6();
   }
 
   /**
@@ -17,7 +42,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int balance() {
     // TODO implement method
-    return 0;
+    return mBalance;
   }
 
   /**
@@ -25,6 +50,29 @@ public class WalletViewModel extends ViewModel {
    */
   public void rollDie() {
     // TODO implement method
+
+    //die roll
+    lastRoll = mDie.value();
+    mDie.roll();
+    totalRolls ++;
+    Log.d(TAG, "Die roll = " + mDie.value());
+
+    //double sixes
+    if(mDie.value() == WIN_VALUE && lastRoll == WIN_VALUE) {
+      doubleSixes ++;
+      mBalance += INCREMENT + BONUS;
+    }
+    //single six
+    else if(mDie.value() == WIN_VALUE){
+      singleSixes ++;
+      mBalance += INCREMENT;
+    }
+    //double other
+    else if(mDie.value() ==  lastRoll){
+      doubleOthers ++;
+      mBalance -= PENALTY;
+    }
+    Log.d(TAG, "New Balance = " + mBalance);
   }
 
   /**
@@ -33,7 +81,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int dieValue() {
     // TODO implement method
-    return 0;
+    return mDie.value();
   }
 
   /**
@@ -42,7 +90,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int singleSixes() {
     // TODO implement method
-    return 0;
+    return singleSixes;
   }
 
   /**
@@ -51,7 +99,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int totalRolls() {
     // TODO implement method
-    return 0;
+    return totalRolls;
   }
 
   /**
@@ -60,7 +108,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int doubleSixes() {
     // TODO implement method
-    return 0;
+    return doubleSixes;
   }
 
   /**
@@ -69,7 +117,7 @@ public class WalletViewModel extends ViewModel {
    */
   public int doubleOthers() {
     // TODO implement method
-    return 0;
+    return doubleOthers;
   }
 
   /**
@@ -78,6 +126,12 @@ public class WalletViewModel extends ViewModel {
    */
   public int previousRoll() {
     // TODO implement method
-    return 0;
+    return lastRoll;
+  }
+
+  @Override
+  protected void onCleared() {
+    super.onCleared();
+    Log.d(TAG, "onCleared");
   }
 }
