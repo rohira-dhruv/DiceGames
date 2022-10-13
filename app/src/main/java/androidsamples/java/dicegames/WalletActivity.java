@@ -18,6 +18,11 @@ public class WalletActivity extends AppCompatActivity {
 
   private TextView mTxtBalance;
   private Button mBtnRoll;
+  private TextView mPrevRoll;
+  private TextView mSingleSixes;
+  private TextView mTotalRolls;
+  private TextView mDoubleSixes;
+  private TextView mDoubleOthers;
   private WalletViewModel mWalletVM;
 
   @Override
@@ -29,6 +34,11 @@ public class WalletActivity extends AppCompatActivity {
 
     mTxtBalance = findViewById(R.id.txt_balance);
     mBtnRoll = findViewById(R.id.btn_roll);
+    mPrevRoll = findViewById(R.id.txt_prev_roll_value);
+    mSingleSixes = findViewById(R.id.txt_sixes_rolled_value);
+    mTotalRolls = findViewById(R.id.txt_total_rolls_value);
+    mDoubleOthers = findViewById(R.id.txt_double_others_value);
+    mDoubleSixes = findViewById(R.id.txt_double_sixes_value);
 
     mWalletVM = new ViewModelProvider(this).get(WalletViewModel.class);
 
@@ -60,6 +70,11 @@ public class WalletActivity extends AppCompatActivity {
   private void updateUI() {
     mTxtBalance.setText(Integer.toString(mWalletVM.balance()));
     mBtnRoll.setText(Integer.toString(mWalletVM.dieValue()));
+    mPrevRoll.setText(Integer.toString(mWalletVM.previousRoll()));
+    mSingleSixes.setText(Integer.toString(mWalletVM.singleSixes()));
+    mTotalRolls.setText(Integer.toString(mWalletVM.totalRolls()));
+    mDoubleSixes.setText(Integer.toString(mWalletVM.doubleSixes()));
+    mDoubleOthers.setText(Integer.toString(mWalletVM.doubleOthers()));
   }
 
 //  @Override
