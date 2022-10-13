@@ -65,15 +65,15 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
-
+    android:gravity="center"
+    tools:context=".WalletActivity">
 
     <TextView
         android:id="@+id/txt_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="57dp"
-        android:layout_marginBottom="81dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="96dp"
         android:text="@string/txt_info"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/btn_roll"
@@ -84,8 +84,10 @@
         android:id="@+id/txt_sixes_rolled_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="39dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
         android:text="@string/sixes_rolled_label"
+        app:layout_constraintStart_toStartOf="@id/txt_info"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_sixes_rolled_value"
         app:layout_constraintEnd_toEndOf="@+id/txt_sixes_rolled_value" />
 
@@ -93,20 +95,20 @@
         android:id="@+id/txt_sixes_rolled_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/zero"
-        app:layout_constraintStart_toStartOf="@+id/txt_double_sixes_value"
+        app:layout_constraintStart_toEndOf="@+id/txt_sixes_rolled_label"
         app:layout_constraintTop_toBottomOf="@+id/txt_info" />
 
     <TextView
         android:id="@+id/txt_total_rolls_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/total_rolls_label"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="88dp"
         app:layout_constraintBaseline_toBaselineOf="@id/txt_sixes_rolled_label"
-        app:layout_constraintStart_toEndOf="@id/txt_sixes_rolled_label"
+        app:layout_constraintStart_toEndOf="@id/txt_sixes_rolled_value"
         app:layout_constraintEnd_toStartOf="@+id/txt_total_rolls_value"
         app:layout_constraintTop_toBottomOf="@+id/txt_info" />
 
@@ -114,29 +116,31 @@
         android:id="@+id/txt_total_rolls_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="8dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/zero"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_total_rolls_label"
-        app:layout_constraintStart_toEndOf="@+id/txt_total_rolls_label" />
+        app:layout_constraintStart_toEndOf="@+id/txt_total_rolls_label"
+        app:layout_constraintEnd_toEndOf="@id/txt_info"/>
 
 
     <TextView
         android:id="@+id/txt_double_sixes_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="39dp"
         android:text="@string/double_sixes_label"
+        app:layout_constraintStart_toStartOf="@id/txt_sixes_rolled_label"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_double_sixes_value"
-        app:layout_constraintEnd_toEndOf="@+id/txt_double_sixes_value" />
+        app:layout_constraintEnd_toStartOf="@+id/txt_double_sixes_value" />
 
     <TextView
         android:id="@+id/txt_double_sixes_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:padding="16dp"
+        android:padding="8dp"
         android:text="@string/zero"
-        app:layout_constraintEnd_toStartOf="@+id/txt_double_others_label"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@id/txt_double_sixes_label"
         app:layout_constraintTop_toBottomOf="@+id/txt_sixes_rolled_value" />
 
     <TextView
@@ -145,8 +149,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/double_others_label"
+        android:layout_marginStart="88dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_double_sixes_label"
+        app:layout_constraintStart_toEndOf="@id/txt_double_sixes_value"
         app:layout_constraintEnd_toStartOf="@+id/txt_double_others_value"
-        app:layout_constraintTop_toBottomOf="@+id/txt_total_rolls_value" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_total_rolls_label" />
 
     <TextView
         android:id="@+id/txt_double_others_value"
@@ -155,15 +162,15 @@
         android:padding="16dp"
         android:text="@string/zero"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_double_others_label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/txt_total_rolls_value"
+        app:layout_constraintStart_toEndOf="@id/txt_double_others_label" />
 
 
     <TextView
         android:id="@+id/txt_balance_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/coins"
         app:layout_constraintBottom_toTopOf="@+id/btn_roll"
         app:layout_constraintEnd_toStartOf="@+id/txt_balance" />
@@ -172,9 +179,8 @@
         android:id="@+id/txt_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:padding="16dp"
+        android:layout_marginEnd="120dp"
+        android:padding="8dp"
         android:text="@string/zero"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_balance_label"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -182,16 +188,16 @@
 
     <Button
         android:id="@+id/btn_roll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
         android:background="@color/purple_200"
         android:text="@string/zero"
         android:textAlignment="center"
         android:textColor="@color/teal_200"
         android:textSize="72sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txt_balance"
-        app:layout_constraintStart_toStartOf="@+id/txt_balance"
+        app:layout_constraintEnd_toEndOf="@+id/txt_balance"
+        app:layout_constraintStart_toStartOf="@+id/txt_balance_label"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -201,6 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/prev_roll_label"
+        app:layout_constraintStart_toStartOf="@id/btn_roll"
         app:layout_constraintEnd_toStartOf="@+id/txt_prev_roll_value"
         app:layout_constraintTop_toBottomOf="@+id/btn_roll" />
 
@@ -208,12 +215,11 @@
         android:id="@+id/txt_prev_roll_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:padding="16dp"
+        android:padding="8dp"
         android:text="@string/zero"
         app:layout_constraintBaseline_toBaselineOf="@+id/txt_prev_roll_label"
-        app:layout_constraintEnd_toEndOf="@+id/btn_roll" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_roll"
+        app:layout_constraintStart_toEndOf="@id/txt_prev_roll_label"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
