@@ -29,13 +29,13 @@ public class WalletActivity extends AppCompatActivity {
     Log.d(TAG, "onCreate");
     setContentView(R.layout.activity_wallet);
 
-    mTxtBalance = findViewById(R.id.txt_balance);
+    mTxtBalance = findViewById(R.id.txt_coins);
     mBtnRoll = findViewById(R.id.btn_die);
-    mPrevRoll = findViewById(R.id.txt_prev_roll_value);
-    mSingleSixes = findViewById(R.id.txt_sixes_rolled_value);
-    mTotalRolls = findViewById(R.id.txt_total_rolls_value);
-    mDoubleOthers = findViewById(R.id.txt_double_others_value);
-    mDoubleSixes = findViewById(R.id.txt_double_sixes_value);
+    mPrevRoll = findViewById(R.id.txt_prev_roll);
+    mSingleSixes = findViewById(R.id.txt_single_sixes);
+    mTotalRolls = findViewById(R.id.txt_total_rolls);
+    mDoubleOthers = findViewById(R.id.txt_double_others);
+    mDoubleSixes = findViewById(R.id.txt_double_sixes);
 
     mWalletVM = new ViewModelProvider(this).get(WalletViewModel.class);
 
