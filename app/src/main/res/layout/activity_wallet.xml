@@ -43,7 +43,7 @@
       app:layout_constraintEnd_toEndOf="parent" />
 
   <Button
-      android:id="@+id/btn_roll"
+      android:id="@+id/btn_die"
       android:layout_width="128dp"
       android:layout_height="128dp"
       android:layout_marginTop="51dp"
@@ -65,7 +65,7 @@
       android:layout_height="wrap_content"
       android:layout_marginBottom="16dp"
       android:text="@string/prev_roll_label"
-      app:layout_constraintTop_toBottomOf="@id/btn_roll"
+      app:layout_constraintTop_toBottomOf="@id/btn_die"
       app:layout_constraintBottom_toTopOf="@+id/txt_sixes_rolled_value"
       app:layout_constraintEnd_toStartOf="@+id/txt_prev_roll_value"
       app:layout_constraintStart_toStartOf="parent"
