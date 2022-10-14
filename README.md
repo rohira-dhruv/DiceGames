@@ -85,7 +85,11 @@
 
 ## Accessibility
 
+- <strong>Using Talkback:</strong> Yes, I have tested my app using Talkback and it works fine. I have also added content descriptions to all the UI elements in my app. Initially, it was very hard to navigate exactly to where we wanted as there were no contentDescriptions for different statistical fields. For example, All said "0" initially. But after changing that, I was able to navigate pretty easily and use the app well.
 
+- If the Die were an ImageButton, I would have ensured that I added an <i> android:contentDescription</i> attribute to that element in the layout file. When Talkback would be enabled, the user would be able to hear the content description of the ImageButton and would be able to know what the button does.
+
+- <strong>Accessibility Scanner:</strong> Running the accessibility Scanner showed multiple suggestions (6) at first. First, there was low contrast between the Text and the Background on the Button. I fixed this by making the text colour white. Next, there were multiple TextViews that had value as 0, so It was tough to understand where exactly are we on the Screen. So, I added "contentDescriptions" to each of the UI elements which helped the user understand where they are. Other suggestions were mostly related to Text Scalability and I fixed them accordingly.
 ## Time Taken
 
 - It took me roughly 25 hours to finish the assignment. Developing the model and Integrating the UI took roughly 6 hours, while the majority of my time was spent in learning how to use Mockito for implementing my Unit test cases.
