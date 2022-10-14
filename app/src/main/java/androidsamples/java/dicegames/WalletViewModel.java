@@ -15,8 +15,9 @@ public class WalletViewModel extends ViewModel {
   private static final int PENALTY = 5;
 
   private int mBalance;
-  private Die mDie;
+  public Die mDie;
   private int lastRoll;
+  private int curRoll;
   private int singleSixes;
   private int doubleSixes;
   private int totalRolls;
@@ -30,6 +31,7 @@ public class WalletViewModel extends ViewModel {
     // TODO implement method
     mBalance = 0;
     lastRoll = 0;
+    curRoll = 0;
     singleSixes = 0;
     doubleOthers = 0;
     doubleSixes = 0;
@@ -54,31 +56,31 @@ public class WalletViewModel extends ViewModel {
     // TODO implement method
 
     //die roll
-    lastRoll = mDie.value();
+    lastRoll = curRoll;
     mDie.roll();
     totalRolls ++;
-    Log.d(TAG, "Die roll = " + mDie.value());
+    curRoll = mDie.value();
 
     //double sixes
-    if(mDie.value() == WIN_VALUE && lastRoll == WIN_VALUE) {
+    if(curRoll == WIN_VALUE && lastRoll == WIN_VALUE) {
       doubleSixes ++;
       inc = true;
       mBalance += INCREMENT + BONUS;
     }
     //single six
-    else if(mDie.value() == WIN_VALUE){
+    else if(curRoll == WIN_VALUE){
       singleSixes ++;
       inc = true;
       mBalance += INCREMENT;
     }
     //double other
-    else if(mDie.value() ==  lastRoll){
+    else if(curRoll ==  lastRoll){
       doubleOthers ++;
       inc = false;
       mBalance -= PENALTY;
     }
     else inc = false;
-    Log.d(TAG, "New Balance = " + mBalance);
+//    System.out.println(mBalance);
   }
 
   /**
