@@ -73,13 +73,13 @@
 
     - This was done by adding these fields to the <i>WalletViewModel</i> class and then accessing them in the <i>WalletActivity</i> class using getter methods.
 
-    - This also provides some clarity to the user and it allows him to calculate the coins as the game progresses.
+    - This also provides some clarity to the user and it allows him to calculate the coins based on the displayed statistics as the game progresses.
 
 ## Testing
 
 - Yes, I have followed a test-driven approach :
 
-    - While developing the model, I had written down several inputs to check different edge cases. So after every iteration of developing the model, I manually ran all those test cases to check my test cases. Later, I also implemented these as Unit test cases in my project. This approach was helpful but it has the downside that it slows down the development process.
+    - While developing the model, I had written down several inputs to check different edge cases. So after every iteration of developing the model, I manually ran all those test cases to check my test cases. Later, while I was trying to learn about Mockito and how to implement it, I tired a lot of different ways of accessing fields through objects or even changing their access specifiers but finally, I was able to figure out the efficient way to implement Unit Test cases with Mockito. I also implemented these as Unit test cases in my project. This approach was helpful but it has the downside that it slows down the development process.
 
     - <strong> Stress Testing using Monkey : </strong> Yes I used the monkey tool to stress test my app. I started with 500 actions and gradually increased it until 5000 and the "monkey" did not report an error or crash any of the time. So my app has been stress tested as well.
 
@@ -88,12 +88,12 @@
 
 ## Time Taken
 
-- It took me roughly 15 hours to finish the assignment. Developing the model and Integrating the UI took roughly 6 hours, while the majority of my time was spent in learning how to use Mockito for implementing my Unit test cases.
+- It took me roughly 25 hours to finish the assignment. Developing the model and Integrating the UI took roughly 6 hours, while the majority of my time was spent in learning how to use Mockito for implementing my Unit test cases.
 
-- I also spent a considerable amount of time trying to implement [Material Component](https://material.io/components) UI to enhance user experience but It was generating a lot of issues while implementing it so I was unable to do so in this project.
+- I also spent a considerable amount of time trying to learn about Mockito and trying to implement the Unit Test Cases. It took a major chunk of my time on this assignment but I was able to figure it out in the end.
 ## Difficulty Rating
 
-- I would rate this assignment as a <strong>7/10</strong> where 10 being the most difficult. The major issues I faced were of implementing the UI and learning how to use ConstraintLayout as this layout would have been much easier to do if it was a LinearLayout. 
+- I would rate this assignment as a <strong>8/10</strong> where 10 being the most difficult. The major issues I faced were of implementing the UI and learning how to use ConstraintLayout as this layout would have been much easier to do if it was a LinearLayout. 
 
 - I also had to learn about Mockito, which further added to the complexity of the assignment.
 
