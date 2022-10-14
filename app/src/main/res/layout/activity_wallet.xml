@@ -38,6 +38,7 @@
       android:layout_marginEnd="200dp"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/coins_value"
       app:layout_constraintStart_toEndOf="@id/txt_balance_label"
       app:layout_constraintBaseline_toBaselineOf="@+id/txt_balance_label"
       app:layout_constraintEnd_toEndOf="parent" />
@@ -50,9 +51,10 @@
       android:layout_marginBottom="51dp"
       android:background="@color/purple_200"
       android:text="@string/zero"
+      android:contentDescription="@string/current_value"
       android:textAlignment="center"
-      android:textColor="@color/teal_200"
-      android:textSize="72sp"
+      android:textColor="@color/white"
+      android:textSize="72dp"
       app:layout_constraintBottom_toBottomOf="@+id/txt_prev_roll"
       app:layout_constraintEnd_toEndOf="@+id/txt_coins"
       app:layout_constraintStart_toStartOf="@+id/txt_balance_label"
@@ -77,6 +79,7 @@
       android:layout_height="wrap_content"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/prev_roll_value"
       app:layout_constraintBaseline_toBaselineOf="@+id/txt_prev_roll_label"
       app:layout_constraintStart_toEndOf="@id/txt_prev_roll_label"
       app:layout_constraintEnd_toEndOf="parent" />
@@ -95,6 +98,7 @@
       android:layout_height="wrap_content"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/sixes_rolled_value"
       app:layout_constraintBaseline_toBaselineOf="@id/txt_sixes_rolled_label"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toEndOf="@+id/txt_sixes_rolled_label"
@@ -116,6 +120,7 @@
       android:layout_height ="wrap_content"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/total_rolls_value"
       app:layout_constraintBaseline_toBaselineOf="@+id/txt_total_rolls_label"
       app:layout_constraintStart_toEndOf="@+id/txt_total_rolls_label" />
 
@@ -134,6 +139,7 @@
       android:layout_height="wrap_content"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/double_sixes_value"
       app:layout_constraintBaseline_toBaselineOf="@id/txt_double_others_label"
       app:layout_constraintStart_toEndOf="@+id/txt_double_sixes_label"
       app:layout_constraintTop_toBottomOf="@+id/txt_single_sixes" />
@@ -153,6 +159,7 @@
       android:layout_height="wrap_content"
       android:padding="8dp"
       android:text="@string/zero"
+      android:contentDescription="@string/double_others_value"
       app:layout_constraintBaseline_toBaselineOf="@+id/txt_double_others_label"
       app:layout_constraintStart_toStartOf="@+id/txt_total_rolls" />
 

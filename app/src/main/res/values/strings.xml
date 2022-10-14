@@ -8,4 +8,11 @@
   <string name="total_rolls_label">Total Dice Rolls:</string>
   <string name="double_sixes_label">Double Sixes:</string>
   <string name="double_others_label">Double Others:</string>
+  <string name="coins_value">Coin Balance</string>
+  <string name="prev_roll_value">Previous Rolled Number</string>
+  <string name="sixes_rolled_value">Number of Single Sixes Rolled</string>
+  <string name="total_rolls_value">Total number of Dice Rolls</string>
+  <string name="double_sixes_value">Number of Double Sixes</string>
+  <string name="double_others_value">Number of Double Others:</string>
+  <string name="current_value">Current Rolled Number</string>
 </resources>
